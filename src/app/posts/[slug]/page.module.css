@@ -1,0 +1,18 @@
+.body h3 {
+    color: #888;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+}
+
+.code {
+    background: #171D1F;
+    padding: 16px;
+    color: #bcbcbc;
+    overflow-y: scroll;
+    box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.24);
+    min-height: 250px;
+    line-height: 150%;
+    font-size: 15px;
+}
