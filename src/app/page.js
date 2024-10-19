@@ -22,8 +22,8 @@ async function getAllPosts(page, searchTerm) {
         where: where,
         take: LIMIT_PER_PAGE,
         skip: (page-1) * LIMIT_PER_PAGE,
-        include: { author: true },
-        orderBy: { createdAt: 'desc' }
+        include: { author: true, comments: true },
+        orderBy: { id: 'desc' }
       }),
       db.post.count({where: where})
     ]);

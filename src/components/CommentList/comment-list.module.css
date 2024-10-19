@@ -1,0 +1,24 @@
+.comments {
+    width: 993px;
+    height: 839px;
+    padding: 32px 16px;
+    gap: 10px;
+    opacity: 0px;
+    background: #888888;
+    overflow-y: scroll;
+}
+
+.comments ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.comments ul li {
+    padding: 16px 0;
+    border-bottom: 1px solid black;
+}
+
+.comments ul li:last-child {
+    border-bottom: none;
+}

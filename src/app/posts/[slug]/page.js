@@ -5,12 +5,18 @@ import html from "remark-html";
 import styles from "./page.module.css";
 import db from "../../../../prisma/db";
 import { redirect } from "next/navigation";
+import { CommentList } from "@/components/CommentList";
 
 async function getPostBySlug(slug) {
   try {
     const post = await db.post.findFirst({
       where: { slug: slug },
-      include: { author: true }
+      include: {
+        author: true,
+        comments: {
+          include: { author: true },
+        },
+      },
     });
 
     if (!post) {
@@ -21,13 +27,13 @@ async function getPostBySlug(slug) {
     post.markdown = processedContent.toString();
 
     return post;
-  } catch(e) {
+  } catch (e) {
     if (e instanceof NotFoundException) {
-      redirect('/not-found');
+      redirect("/not-found");
       return;
     }
 
-    logger.error('Falha ao obter post com o slug', { slug, error: e });
+    logger.error("Falha ao obter post com o slug", { slug, error: e });
   }
 }
 
@@ -35,9 +41,15 @@ const PagePost = async ({ params }) => {
   const post = await getPostBySlug(params.slug);
   return (
     <div className={styles.body}>
-        <CardPost post={post} highlight/>
+      <div>
+        <CardPost post={post} highlight />
         <h3>Código:</h3>
-        <div className={styles.code} dangerouslySetInnerHTML={{ __html: post.markdown }}></div>
+        <div className={styles.code} dangerouslySetInnerHTML={{ __html: post.markdown }}>
+        </div>
+      </div>
+      <div>
+        <CommentList comments={post.comments} />
+      </div>
     </div>
   );
 };

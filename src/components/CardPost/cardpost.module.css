@@ -5,7 +5,7 @@
 }
 
 .highlight {
-    width: auto;
+    width: 993px;
 }
 
 .header {
@@ -48,8 +48,22 @@
 
 .footer {
     padding: 16px;
+    display: flex;
+    justify-content: space-between;
 }
 
+.footer p {
+    margin: 0;
+    color: #888;
+    font-size: 15px;
+    text-align: center;
+}
+
+.footerButtons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
 .link {
     text-decoration: none;

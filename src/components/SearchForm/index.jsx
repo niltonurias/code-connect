@@ -5,10 +5,10 @@ export const SearchForm = () => {
     return (
         <form className={styles.form} action='/'>
             <div className={styles.inputIcons}>
-                <i class="material-symbols-outlined">search</i>
+                <i className={"material-symbols-outlined"}>search</i>
                 <input name="q" className={styles.input} placeholder="Digite o que você procura" />
             </div>
-            <Button><span class="material-symbols-outlined">search</span></Button>
+            <Button><span className={"material-symbols-outlined"}>search</span></Button>
         </form>
     );
 };
