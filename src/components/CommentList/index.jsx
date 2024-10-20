@@ -12,7 +12,7 @@ export const CommentList = ({ comments }) => {
                 {comments.map( comment => <li key={comment.id}>
                     <Comment comment={comment} key={comment.id}/>
                     <ModalReply comment={comment} />
-                    <Replies />
+                    <Replies comment={comment} />
                 </li> )}
             </ul>
         </section>

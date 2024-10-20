@@ -1,3 +1,7 @@
+.replies ul {
+    padding: 0 40px;
+}
+
 .btn {
     position: relative;
     border: none;

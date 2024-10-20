@@ -16,9 +16,8 @@
 
 .comments ul li {
     padding: 16px 0;
-    border-bottom: 1px solid black;
 }
 
-.comments ul li:last-child {
-    border-bottom: none;
+.comments .comment {
+    border-bottom: 1px solid black;
 }
