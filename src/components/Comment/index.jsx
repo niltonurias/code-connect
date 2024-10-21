@@ -8,7 +8,7 @@ export const Comment = ({ comment }) => {
                 <div className={styles.userInfo}>
                     <Image src={comment.author.avatar} width={32} height={32} alt={`Avatar do(a) ${comment.author.name}`} />
                     <strong>
-                        @{comment.author.name}
+                        @{comment.author.username}
                     </strong>
                 </div>
                 <p>{comment.text}</p>

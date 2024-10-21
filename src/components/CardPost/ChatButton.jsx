@@ -9,7 +9,7 @@ import { useFormStatus } from 'react-dom';
 export const ChatButton = () => {
     const { pending } = useFormStatus();
     return (
-        <IconButton disable={pending}>
+        <IconButton aria-disabled={pending}>
             { pending ? <Spinner /> : <Chat /> }
         </IconButton>
     );

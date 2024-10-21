@@ -18,6 +18,9 @@ body {
 }
 
 .main-content {
+  display: flex;
+  gap: 56px;
+  flex-direction: column;
   flex-grow: 1;
 }
 
@@ -37,4 +40,27 @@ a:visited {
 ::backdrop {
   background-color: #171D1F;
   opacity: .8;
+}
+
+/* ***************************** */
+/* **********scrollbar********** */
+/* ***************************** */
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #132E35; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #53b058;
+  padding: 10px
 }

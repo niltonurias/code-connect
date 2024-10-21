@@ -3,6 +3,7 @@ import logger from "@/logger";
 import styles from "./page.module.css";
 import {CardPost} from "@/components/CardPost";
 import db from '../../prisma/db';
+import { NoPostFound } from '@/components/NoPostFound';
 
 const LIMIT_PER_PAGE = 4;
 
@@ -45,11 +46,12 @@ export default async function Home({searchParams}) {
 
   return (
     <main className={styles.grid}>
+      {posts?.length === 0 ? <NoPostFound /> : '' }
       {posts?.map(post => <CardPost key={post.id} post={post} />)}
-      <div className={styles.links}>
+      {posts?.length > 0 ? <div className={styles.links}>
         {prev && <Link href={{ pathname: '/', query: { page: prev, q: searchTerm } }}>Página anterior</Link>}
         {next && <Link href={{ pathname: '/', query: { page: next, q: searchTerm } }}>Próxima pagina</Link>}
-      </div>
+      </div> : ''}
     </main>
   );
 }

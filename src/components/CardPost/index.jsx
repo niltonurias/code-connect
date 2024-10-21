@@ -4,14 +4,18 @@ import Link from 'next/link';
 import styles from './cardpost.module.css';
 
 import { Avatar } from '@/components/Avatar';
-import { incrementThumbsUp, postComment } from '@/actions';
 import { ThumbsUpButton } from './ThumbsUpButton';
 import { ModalComment } from '../ModalComment';
 
-export const CardPost = ({ post, highlight }) => {
+import { incrementThumbsUp } from '@/actions/post';
+import { postComment } from '@/actions/comment';
+import db from '../../../prisma/db';
+
+export const CardPost = async ({ post, highlight }) => {
 
     const submitThumbsUp = incrementThumbsUp.bind(null, post);
     const submitPostComment = postComment.bind(null, post);
+    const countComments = await db.comment.count({ where: { postId: post.id } });
 
     return (
         <article className={`${styles.card} ${!highlight ? '' : styles.highlight}`}>
@@ -38,7 +42,7 @@ export const CardPost = ({ post, highlight }) => {
                     <div>
                         <ModalComment action={submitPostComment}/>
                         <p>
-                            {post.comments.length}
+                            {countComments}
                         </p>
                     </div>
                 </div>

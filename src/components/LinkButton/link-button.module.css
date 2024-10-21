@@ -1,0 +1,22 @@
+.btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn:active {
+    color: white;
+}
+
+.btn a {
+    text-decoration: none;
+}
+
+.btn a:visited {
+    text-decoration: none;
+}
+  
+.btnActive {
+    color: #81FE88 !important;
+}

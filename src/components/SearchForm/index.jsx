@@ -8,7 +8,7 @@ export const SearchForm = () => {
                 <i className={"material-symbols-outlined"}>search</i>
                 <input name="q" className={styles.input} placeholder="Digite o que você procura" />
             </div>
-            <Button><span className={"material-symbols-outlined"}>search</span></Button>
+            <Button>Buscar</Button>
         </form>
     );
 };

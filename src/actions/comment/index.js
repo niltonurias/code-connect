@@ -1,25 +1,7 @@
-'use server'
+'use server';
 
-import db from "../../prisma/db";
+import db from "../../../prisma/db";
 import { revalidatePath } from "next/cache";
-
-export async function incrementThumbsUp(post) {
-    //await new Promise((resolve) => setTimeout(resolve, 30000));
-
-    await db.post.update({
-        where: {
-            id: post.id
-        },
-        data: {
-            likes: {
-                increment: 1
-            }
-        }
-    });
-
-    revalidatePath('/');
-    revalidatePath(`/${post.slug}`);
-}
 
 export async function postComment(post, formData) {
     const author = await db.user.findFirst({
