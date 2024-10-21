@@ -1,0 +1,19 @@
+.btn {
+    color: #81FE88;
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    border-radius: 8px;
+    background: transparent;
+    border: 2px solid #81FE88;
+    padding: 12px 16px;
+    cursor: pointer;
+}
+
+.btn a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}

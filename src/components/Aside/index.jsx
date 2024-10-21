@@ -13,7 +13,9 @@ export const Aside = () => {
                 <Image src={logo} alt="Logo da Code Connect"/>
             </Link>
             <div className={styles.menu}>
-                <Button>Publicar</Button>
+                <Link href={"/posts/new"} className={styles.btn}>
+                    Publicar
+                </Link>
                 <LinkButton href="/">
                     <MaterialIconWithText icon={"feed"}>Feed</MaterialIconWithText>
                 </LinkButton>
