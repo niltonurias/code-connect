@@ -18,9 +18,12 @@ model User {
   id Int @id @default(autoincrement())
   name String
   username String @unique
+  biography String?
   avatar String
   Post Post[]
   comments Comment[]
+  followedBy UserFollower[] @relation("followedBy")
+  following UserFollower[] @relation("following")
 }
 
 model Post {
@@ -50,4 +53,13 @@ model Comment {
   parentId Int?
   parent Comment? @relation("CommentChildren", fields: [parentId], references: [id])
   children Comment[] @relation("CommentChildren")
+}
+
+model UserFollower {
+  id Int @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  followedBy   User @relation("followedBy", fields: [followedById], references: [id])
+  followedById Int
+  following    User @relation("following", fields: [followingId], references: [id])
+  followingId  Int
 }

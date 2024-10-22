@@ -20,7 +20,7 @@ export const Aside = () => {
                     <MaterialIconWithText icon={"feed"}>Feed</MaterialIconWithText>
                 </LinkButton>
 
-                <LinkButton href="#">
+                <LinkButton href="/profile/anabeatriz_dev">
                     <MaterialIconWithText icon={"account_circle"}>Perfil</MaterialIconWithText>
                 </LinkButton>
 
