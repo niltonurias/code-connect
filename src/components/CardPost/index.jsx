@@ -28,7 +28,7 @@ export const CardPost = async ({ post, highlight }) => {
             <section className={styles.body}>
                 <h2>{post.title}</h2>
                 <p>{post.body}</p>
-                <Link href={`/posts/${post.slug}`} className={styles.link}>Ver detalhes</Link>
+                { !highlight ? <Link href={`/posts/${post.slug}`} className={styles.link}>Ver detalhes</Link> : '' }
             </section>
 
             <footer className={styles.footer}>
