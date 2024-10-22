@@ -2,8 +2,6 @@
     width: 993px;
     height: 839px;
     padding: 32px 16px;
-    gap: 10px;
-    opacity: 0px;
     background: #888888;
     overflow-y: scroll;
 }
