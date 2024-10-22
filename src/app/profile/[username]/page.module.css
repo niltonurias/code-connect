@@ -1,0 +1,85 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.profile {
+    display: flex;
+    gap: 24px;
+    padding: 16px;
+}
+
+.avatar {
+    position: relative;
+    border-radius: 50%;
+    height: 254px;
+    width: 254px;
+    border: 1px solid #3E3E3F;
+    margin: 0;
+}
+
+.userContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    gap: 24px;
+    flex: 1
+}
+
+.userBasicInfo {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    color: #888;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.userInfo > :first-child {
+    color: #81FE88;
+    font-size: 26px;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 150%;
+}
+
+.userInfo > :last-child {
+    color: #888;
+    font-size: 18px;
+    font-style: normal;
+    line-height: 150%;
+}
+
+.userInfo > :last-child span {
+    font-weight: 600;
+}
+
+.userInfo .biography {
+    color: #888;
+    font-size: 18px;
+    font-style: normal;
+    line-height: 1.5em;
+    
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5; /* number of lines to show */
+            line-clamp: 5;
+    -webkit-box-orient: vertical;
+}
+
+.userInfo div {
+    display: flex;
+    gap: 24px;
+}
+
+.projects {}
